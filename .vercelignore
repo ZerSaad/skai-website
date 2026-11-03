@@ -1,0 +1,7 @@
+README.md
+DESIGN.md
+ASSET-PROMPTS.md
+.git/
+node_modules/
+*.log
+dist/

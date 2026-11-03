@@ -1,0 +1,4 @@
+{
+  "name": "skai-website", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": { "dev": "node scripts/serve.mjs", "check": "node --check main.js && node --check globe.js && node --check site-config.js", "build": "npm run check && node scripts/build.mjs" }
+}
