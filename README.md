@@ -38,17 +38,3 @@ La configuration pointe déjà vers `ZerSaad/skai-releases`, tag `v0.1.0`, fichi
 
 Tant que `published` reste à `false`, le visiteur voit « Bientôt sur Windows » et peut suivre les releases sur GitHub. Le site n’interroge pas automatiquement l’API GitHub et ne simule pas une disponibilité.
 
-## Déployer sur Vercel
-
-Ce dossier doit être un projet distinct du dossier desktop. Ne jamais choisir `skai`, `skai-installer` ou leur dossier parent comme racine du site : ils contiennent des éléments qui ne doivent pas être publiés avec la page.
-
-Depuis Vercel, importer un dépôt contenant **uniquement ce dossier**, puis sélectionner :
-
-- Framework Preset : **Other**
-- Build Command : **npm run build**
-- Output Directory : **dist**
-- Aucune variable d’environnement nécessaire.
-
-Le fichier `vercel.json` décrit l’hébergement statique et les en-têtes de sécurité. Le build copie uniquement la page et ses ressources dans `dist`, sans documentation ni scripts de développement. `.vercelignore` exclut la documentation et les éléments locaux lors d’un déploiement CLI. L’installateur doit rester sur GitHub Releases ; il ne fait pas partie du site.
-
-Cette livraison prépare les fichiers localement. Aucun déploiement ni publication n’a été lancé.
