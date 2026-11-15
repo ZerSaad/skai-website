@@ -1,40 +1,54 @@
-# SKAI : page de présentation
+# SKAI 
 
-Page statique indépendante de l’application desktop, prête à héberger sur Vercel. Aucun SDK Gemini, aucune clé API et aucune donnée utilisateur ne sont intégrés au site.
+Un assistant de voyage personnel pour explorer le monde, préparer sa prochaine destination et découvrir la culture locale.
 
-## Aperçu local
+SKAI associe une conversation avec l’IA, un mode vocal et un globe 3D interactif dans une application Windows.
 
-Dans un terminal VS Code, depuis ce dossier :
+[ Télécharger SKAI](https://github.com/ZerSaad/skai-releases/releases/latest)
 
-```powershell
-npm run dev
-```
+## Découvrir SKAI
 
-Puis ouvrir **http://127.0.0.1:4174** dans le navigateur. Aucun `npm install` n’est nécessaire. `npm run check` contrôle la syntaxe des modules JavaScript. Arrêter le serveur avec Ctrl+C.
+Pose tes questions par écrit ou parle directement à SKAI pour découvrir une destination.
 
-L’environnement isolé de l’agent a pu démarrer le serveur mais n’a pas pu rendre son adresse loopback accessible au navigateur de contrôle. La vérification visuelle complète doit donc être faite depuis ce terminal local ou après un déploiement de prévisualisation. Les contrôles de fichiers et de logique sont distincts de cette vérification visuelle.
+- **Formalités de voyage** — des indications sur les visas selon ta nationalité.
+- **Cuisine et culture** — spécialités locales, traditions et habitudes à table.
+- **Lieux à découvrir** — attractions incontournables et idées de visites.
+- **Périodes de voyage** — conseils sur les saisons et le climat.
+- **Heure locale** — l’heure des destinations évoquées.
 
-## Contenu et interactions
+Le globe accompagne la conversation en se déplaçant vers les destinations mentionnées et en mettant leur pays en lumière.
 
-- Globe sphérique léger dessiné en Canvas avec la cartographie Natural Earth, sélection Marrakech / Tokyo / Lisbonne et rotation au glisser sur ordinateur.
-- Pause de rotation et respect de la préférence de réduction des animations.
-- Exemples de conversation par onglets, clairement identifiés comme exemples sans appel IA.
-- Véritable extrait audio de la voix Kore utilisée par SKAI, généré avec Gemini Live pour cette page. Lecture uniquement après un clic, pause et transcription accessible. Aucun micro activé par le site.
-- Présentation de la mémoire locale et fenêtre d’information sur la confidentialité.
-- Navigation mobile, FAQ native et accès clavier.
-- Téléchargement actif vers l’installateur de la préversion v0.1.0 publiée sur GitHub.
+## Une conversation à voix haute
 
-La photo d’illustration est générée pour le site ; ce n’est ni une capture de l’application ni une photographie documentaire. Le visuel et son prompt sont documentés dans `ASSET-PROMPTS.md`. Police Outfit sous licence OFL et icônes Tabler sous licence MIT, auto-hébergées avec leurs notices. La page ne charge pas de police ou de script depuis un CDN.
+Le mode vocal permet de discuter avec SKAI naturellement. Tu peux interrompre sa réponse pour reprendre la parole, suivre l’état de la conversation grâce à l’orbe et désactiver le vocal à tout moment.
 
-## Configuration du téléchargement
+## Installation
 
-La release v0.1.0 a été vérifiée et le téléchargement est activé dans **site-config.js** :
+1. Ouvre la page des téléchargements.
+2. Télécharge l’installateur Windows `.exe`.
+3. Lance l’installation, puis ouvre SKAI.
+4. Renseigne ton nom et ta nationalité pour personnaliser tes échanges.
 
-```js
-published: true
-```
+Une connexion Internet est nécessaire pour les réponses de l’IA. Le mode vocal nécessite un microphone et une sortie audio.
 
-La configuration pointe déjà vers `ZerSaad/skai-releases`, tag `v0.1.0`, fichier `SKAI-Setup-0.1.0-x64.exe`. Vérifier le nom réel avant l’activation. Le bouton utilisera alors le lien direct de cette release ; il ne dépend pas du raccourci `latest`, qui exclut normalement les préversions.
+## Mémoire et données
 
-Tant que `published` reste à `false`, le visiteur voit « Bientôt sur Windows » et peut suivre les releases sur GitHub. Le site n’interroge pas automatiquement l’API GitHub et ne simule pas une disponibilité.
+Ton profil, l’historique de tes conversations et les destinations consultées sont enregistrés dans une base SQLite locale associée à ton compte Windows.
 
+Les échanges avec l’IA sont transmis à Google Gemini pour générer les réponses. En mode vocal, l’audio est également transmis au service.
+
+Les informations de voyage peuvent évoluer. Vérifie les formalités d’entrée auprès des autorités officielles avant ton départ.
+
+## À propos de ce dépôt
+
+Ce dépôt contient le site de présentation de SKAI, réalisé en HTML, CSS et JavaScript et déployé sur Vercel.
+
+Les installateurs de l’application sont disponibles dans le dépôt [skai-releases](https://github.com/ZerSaad/skai-releases).
+
+## Signaler un problème
+
+Pour signaler un problème sur le site ou proposer une amélioration, ouvre une issue en décrivant ce que tu as observé et, si possible, les étapes pour le reproduire.
+
+---
+
+Créé par [ZerSaad](https://github.com/ZerSaad).
